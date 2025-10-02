@@ -5,7 +5,7 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     s = int(coefficients[0])
     k =1
     while k<degree:
-        s = x*s + coefficients[k]
+        s = x*s + int(coefficients[k])
         k +=1
     return s
 
