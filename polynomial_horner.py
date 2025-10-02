@@ -2,11 +2,14 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     # TODO: Implement polynomial evaluation using Horner's method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result
-    s = int(coefficients[0])
+    if len(coefficients) != degree:
+        raise ValueError("Number of coefficients does not match degree of polynomial")
+    s = float(coefficients[0])
     k =1
     while k<degree:
-        s = x*s + int(coefficients[k])
+        s = x*s + float(coefficients[k])
         k +=1
+        print(f"s{k} = {s}")
     return s
 
 if __name__ == "__main__":
@@ -17,11 +20,11 @@ if __name__ == "__main__":
     YN = True
     while YN:
         degree = int(input("Degree: "))
-        x = int(input("x: "))
-        constant_term = int(input("Constant term: "))
+        x = float(input("x: "))
+        constant_term = float(input("Constant term: "))
         coefficients = []
         for i in range (degree) :
-            coefficients.append(input("coefficient: "))
+            coefficients.append(float(input("coefficient: ")))
         evaluate_polynomial_horner(degree, x, constant_term, *coefficients)
         ans = input("Do you want to run again y/n")
         if ans == "n":
