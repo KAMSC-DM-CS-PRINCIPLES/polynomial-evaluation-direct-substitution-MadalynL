@@ -2,9 +2,9 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     # TODO: Implement polynomial evaluation using Horner's method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result
-        s = float(coefficients[0])
-        for k in range(1, len(coefficients)):
-            s = x * s + float(coefficients[k])
+        s = float(coefficients[-1])
+        for k in range(len(coefficients) - 2, -1, -1):
+            s = s * x + float(coefficients[k])
             print(f"s{k} = {s}")
         return s
 
