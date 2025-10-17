@@ -2,11 +2,11 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     # TODO: Implement polynomial evaluation using Horner's method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result
-        s = float(coefficients[-1])
-        for k in range(len(coefficients) - 2, -1, -1):
-            s = s * x + float(coefficients[k])
-            print(f"s{k} = {s}")
-        return s
+    s = float(coefficients[0])
+    for coeff in coefficients[1:]:
+        s = s * x + float(coeff)
+        print(f"s = {s}")
+    return s
 
 if __name__ == "__main__":
     # TODO: Add main program loop
